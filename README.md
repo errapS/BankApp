@@ -103,7 +103,7 @@ The mock-data used in this project has been created in order to test functionali
 
 
 ## Conclusion/reflection
-This project does not have any kind of UI, it is simply just the backend. As of now, ´main.py´ is just to show that the functions work as intended. In order to create an actual fictiv bank application one would need to implement an UI. 
+This project does not have any kind of UI, it is simply just the backend. As of now, `main.py` is just to show that the functions work as intended. In order to create an actual fictiv bank application one would need to implement an UI. 
 
 Except from this, the project itself is currently based on the format of the mock-data. Other formats on the input-data will most likely cause some issues. For this task the format of the mock-data has not been provided.
 
