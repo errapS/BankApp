@@ -99,7 +99,8 @@ The mock-data used in this project has been created in order to test functionali
 - `getAllTransactionsBySSN(self, ssn: str, acc_id )` - if account is found it will return a list of the account's transactions, else it will return -1.
 
 ##### Diagram
-![https://app.conceptboard.com/export/ab9a389c-44a4-44f7-883b-450ef4c7fdc6/versions/;hi=1;low=196]
+![diagram](https://user-images.githubusercontent.com/86922755/204863216-54bde30d-36d4-4289-8301-ea3f7787a40d.png)
+
 
 ## Conclusion/reflection
 
