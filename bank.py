@@ -50,7 +50,7 @@ class Bank:
     def addCustomer(self, name: str, ssn: str, cust_ids: list):
 
         for cust in self.customers:
-            if name == cust.getName() or ssn == cust.getSsn():
+            if name == cust.getName() and ssn == cust.getSsn():
                 return False
 
         cust = Customer(name, ssn, cust_ids)
@@ -77,21 +77,22 @@ class Bank:
 
 
     def changeCustomerName(self, new_name: str, ssn: str):
-        state = False
         for cust in self.getCustomers():
             if  ssn == cust.getSsn():
                 state = True
                 cust.setName(new_name)
+                return True
 
-        return state
+        return False
 
 
     def removeCustomer(self, ssn: str):
+        del_customer = []
         c = 0
         for cust in self.getCustomers():
             if  ssn == cust.getSsn():
-                del_customer = [self.customers[c].getName(), self.customers[c].getSsn(), self.customers[c].getId(),
-                                [(acc.getAccountNumber(), acc.getBalance()) for acc in self.customers[c].getAccounts()]]
+                del_customer.append([self.customers[c].getName(), self.customers[c].getSsn(), self.customers[c].getId(),
+                                [(acc.getAccountNumber(), acc.getBalance()) for acc in self.customers[c].getAccounts()]])
                 del self.customers[c]
                 return del_customer
             c += 1
@@ -114,8 +115,11 @@ class Bank:
                 for acc in cust.getAccounts():
                     if acc == acc_id:
                         return acc.getAccountNumber(), acc.getBalance(), acc.getType()
+        return False
 
     def deposit(self, ssn: str, amount: float, sender: str, reciever: str, trans_date: str):
+        if sender != reciever:
+            return False
 
         for cust in self.getCustomers():
             if  ssn == cust.getSsn():
@@ -127,6 +131,8 @@ class Bank:
         return False
 
     def withdraw(self, ssn: str, amount: float, sender: str, reciever: str, trans_date: str):
+        if sender != reciever:
+            return False
 
         for cust in self.getCustomers():
             if  ssn == cust.getSsn():
@@ -174,11 +180,10 @@ class Bank:
         return False
 
     def getAllTransactionsBySSN(self, ssn: str, acc_id ):
-        res = -1
         for cust in self.getCustomers():
             if  ssn == cust.getSsn():
                 for acc in cust.getAccounts():
                     if acc.getAccountNumber() == acc_id:
                         return acc.getTransactions()
 
-        return res
+        return -1
