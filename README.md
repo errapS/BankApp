@@ -39,6 +39,8 @@ Importing and handling data into a dataframe, needs to support following file ty
 - `.csv`
 - `.txt`
 
+###### Other
+The mock-data used in this project has been created in order to test functionality of the functions and logics. The format of the data has not been specified which might cause issues in the data-handling functions when using data that has a different format.
 
 ## Description of functions
 
