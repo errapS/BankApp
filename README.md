@@ -98,6 +98,10 @@ The mock-data used in this project has been created in order to test functionali
 - `closeAccount(self, ssn: str, account_number: str)` - if account is not found it will return False. If account is found it will remove the account from the list of accounts and return the removed account's balance and account number.
 - `getAllTransactionsBySSN(self, ssn: str, acc_id )` - if account is found it will return a list of the account's transactions, else it will return -1.
 
+##### Diagram
+![https://app.conceptboard.com/export/ab9a389c-44a4-44f7-883b-450ef4c7fdc6/versions/;hi=1;low=196]
+
+## Conclusion/reflection
 
 
     
