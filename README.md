@@ -107,7 +107,7 @@ This project does not have any kind of UI, it is simply just the backend. As of 
 
 Except from this, the project itself is currently based on the format of the mock-data. Other formats on the input-data will most likely cause some issues. For this task the format of the mock-data has not been provided.
 
-Related to the projects performance, for large data-sets the run-time will be very bad. This since it is using linear search in a lot of functions to traverse the lists storing the customers/accounts. 
+Related to the project's performance, for large data-sets the run-time will be very bad. This since it is using linear search in a lot of functions to traverse the lists storing the customers/accounts. 
 
 I have not really used any milestones/tasks. I wrote all classes and the functions based on the tasks requirements which went relatively quick. Then I proceeded to implement each function and confirm it is working as intended. Some of they did not which led to debugging and troubleshooting. In total I believe I spent around 12-16 hours on this project (code + readme).  
 
