@@ -1,0 +1,9 @@
+
+[
+{ "Name": "Rafael Rafasson", "SSN": "199111117821","Type":"Debit", "Balance": 5000.0},
+{ "Name": "Anna Annsson", "SSN": "199707058301","Type":"Debit", "Balance": 1000.0},
+{ "Name": "Erik Eriksson", "SSN": "198601136547","Type":"Debit", "Balance": 0.0},
+{ "Name": "Stina Stinsson", "SSN": "196003270038","Type":"Debit", "Balance": 500.0},
+{ "Name": "Rafael Rafasson", "SSN": "199111117821","Type":"Debit", "Balance": 3000.0}
+]
+    
