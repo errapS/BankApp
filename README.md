@@ -70,7 +70,41 @@ Importing and handling data into a dataframe, needs to support following file ty
 - `printTransactions(self, start_date: str, end_date: str)` - formatted print of the account's transaction history within a given period (start_date:end_date]. If both start_date and end_date are None, it will print the entire transaction history of the account.
 
 ##### Class: Customer
+- Initializing the class takes three input arguments, `name`, `ssn` and `cust_ids`. Creating an object from the Customer class, generates random account number by utilizing `UUID` which creates a unique 32-character hexadecimal string. If the generated customer id already exists it will generate a new id until it's unique.
+- `getId(self)` - returns customer's id.
+- `getName(self)` - returns customer's name.
+- `getSsn(self)` - returns customer's social security number. 
+- `getAccounts(self)` -  returns a list with a customer's accounts (objects)
+- `setName(self, name: str)` - takes input argument `name`, changes the customer's name to the given input.
+- `setAccount(self, account_type: str, balance: float)` - calls for the `Account`-class which creates an account-object and appends it to the list of accounts.
+- `printAccounts(self, accounts: list, start_date: str, end_date: str)` - prints the account-details (number, type, balance) and its transaction history within the given period for all of the customer's accounts. 
+- `removeAccount(self, account: str)` - removes a customer's account from the list of accounts given the account number.
         
+##### Class: Bank
+- `_load(self, path)` - takes a path as input-argument and calls for `DataSource` to handle the file and return a dataframe. It proceeds to use the dataframe in order to populate the bank with the customers.
+- `getCustomers(self)` - returns a list of customers (customer-objects).
+- `get_customer(self, ssn: str)` - returns a customer-object given a social security number, returns -1 if customer was not found.
+- `def getAllCustomers(self):` - returns a list with each customer's name, social security number and customer id. 
+- `addCustomer(self, name: str, ssn: str, cust_ids: list)` - adds customer given a name and a social security number. If the pair of name and social security number already exist in the bank (the customer already exists), it will return False.
+- `changeCustomerName(self, new_name: str, ssn: str)` - changes a customer's name given its social security number. Returns True if successful, else returns False.
+- `removeCustomer(self, ssn: str)` - removes customer from the customer-list given the customers social security number and returns the removed customer's details if successful, else returns -1.
+- `addAccount(self, ssn: str, balance: float)` - adds an account to customer specified by its social security number. Returns the added account's id if succesful, else returns -1.
+- `getAccount(self, ssn: str, acc_id: str)` - returns the account details given a account owner's social security number and the account number, returns False if account was not found.
+- `deposit(self, ssn: str, amount: float, sender: str, reciever: str, trans_date: str)` -  returns False if the sender- and the reciever-adress does not match or if the account number/customer is not found. Else it will call for the `Account`-function `setBalance` which updates the account balance and adds the transaction to the transaction list, returns True. 
+- `withdraw(self, ssn: str, amount: float, sender: str, reciever: str, trans_date: str)` - returns False if the sender- and the reciever-adress does not match or if the account number/customer is not found. If the account does not have enough funds to cover the transaction it will raise an exception. Else it will call for the `Account`-function `setBalance` which updates the account balance and adds the transaction to the transaction list, returns True. 
+- `send(self, ssn: str, amount: float, sender: str, reciever: str, trans_date: str)` - returns False if sender or reciever-adress is not found. If the sender-account does not have enough funds to cover the transaction it will raise an exception. Else it will call for the `Account`-function `setBalance` for both the sender- and reciever-account which updates each account's balance and adds the transaction to the transaction list, returns True. 
+- `closeAccount(self, ssn: str, account_number: str)` - if account is not found it will return False. If account is found it will remove the account from the list of accounts and return the removed account's balance and account number.
+- `getAllTransactionsBySSN(self, ssn: str, acc_id )` - if account is found it will return a list of the account's transactions, else it will return -1.
+
+
+
+    
+    
+  
+    
+    
+    
+    
 
 
     
